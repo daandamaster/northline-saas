@@ -1,0 +1,10 @@
+const NAV=[["overview.html","Overview"],["invoices.html","Invoices"],["customers.html","Customers"],["pipeline.html","Pipeline"],["analytics.html","Analytics"],["billing.html","Billing"],["settings.html","Settings"]];
+const CLIENTS=["Atelier Vos","Havenspoor","Noorderlicht","Kaasboerderij Linden","Studio Meridian","De Grachtwinkel","Polder & Co","Zwartwerk","Oranjehaven BV","Scheepswerf Maas","Kaag & Co","Studio Haarlem","Atlas Retail","De Kade","Polderlijn"];
+const STATUSES=["Paid","Paid","Due","Paid","Overdue","Paid","Draft","Paid","Due","Paid"];
+window.Northline={
+  invoices(){const rows=[];for(let i=0;i<50;i++){const n=1841-i;const amt=(320+(i*137)%4820+(i%7)*13.5);rows.push({id:"INV-"+n,client:CLIENTS[i%CLIENTS.length],amount:amt,status:STATUSES[i%STATUSES.length],date:`2026-09-${String(Math.max(1,17-(i%16))).padStart(2,"0")}`});}return rows;},
+  eur(n){return new Intl.NumberFormat("nl-NL",{style:"currency",currency:"EUR"}).format(n);},
+  shell(active){const rail=document.getElementById("rail");if(!rail)return;rail.innerHTML=`<div class="brand" style="padding:6px 10px 18px"><div class="mark"></div>Northline</div><nav>${NAV.map(([h,l])=>`<a class="${h===active?"on":""}" href="${h}">${l}</a>`).join("")}</nav><div style="margin-top:auto;padding:16px 10px 8px" class="note">Noorderkade BV<br>Alex Rivera</div>`;},
+  bindFilters(tableId){const rows=this.invoices();const draw=(filter)=>{const body=document.querySelector("#"+tableId+" tbody");const list=filter==="All"?rows:rows.filter(r=>r.status===filter);body.innerHTML=list.length?list.map(r=>`<tr><td><a href="invoice.html?id=${r.id}">${r.id}</a></td><td>${r.client}</td><td>${this.eur(r.amount)}</td><td><span class="pill ${r.status}">${r.status}</span></td><td>${r.date}</td></tr>`).join(""):`<tr><td colspan="5">No invoices on this filter.</td></tr>`;};
+draw("All");document.querySelectorAll("[data-filter]").forEach(btn=>btn.onclick=()=>{document.querySelectorAll("[data-filter]").forEach(b=>b.classList.remove("on"));btn.classList.add("on");draw(btn.dataset.filter);});}
+};
