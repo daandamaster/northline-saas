@@ -1,1 +1,70 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Overview — Northline</title><link rel="stylesheet" href="northline.css"></head><body><div class="app"><aside class="rail" id="rail"></aside><main class="main"><div class="top"><div><h1>Overview</h1><p class="note">Friday close · Noorderkade BV</p></div><div class="avatar"></div></div><section class="kpis"><article class="kpi"><span>Collected</span><b>€128.640</b><span class="up">+9.4%</span></article><article class="kpi"><span>Open invoices</span><b>€24.180</b><span class="down">−3.1%</span></article><article class="kpi"><span>Due this week</span><b>18</b></article><article class="kpi"><span>Overdue</span><b>4</b></article></section><section class="grid"><article class="panel"><h2>Channels</h2><div class="bars"><div class="bar"><span>Marketplace</span><i><em style="width:48%"></em></i><span>€61.240</span></div><div class="bar"><span>Retail floor</span><i><em style="width:33%"></em></i><span>€42.180</span></div><div class="bar"><span>Wholesale</span><i><em style="width:13%"></em></i><span>€16.420</span></div><div class="bar"><span>Subscriptions</span><i><em style="width:7%"></em></i><span>€8.800</span></div></div></article><article class="panel"><h2>Hero invoices</h2><table class="table"><tbody><tr><td><a href="invoice.html?id=INV-1841">INV-1841</a></td><td>Atelier Vos</td><td><span class="pill Paid">Paid</span></td></tr><tr><td><a href="invoice.html?id=INV-1840">INV-1840</a></td><td>Havenspoor</td><td><span class="pill Due">Due</span></td></tr><tr><td><a href="invoice.html?id=INV-1838">INV-1838</a></td><td>Noorderlicht</td><td><span class="pill Overdue">Overdue</span></td></tr></tbody></table></article></section></main></div><script src="northline.js"></script><script>Northline.shell("overview.html")</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Northline — Overview</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="northline.css" />
+</head>
+<body>
+<div class="app" data-app data-nav="overview">
+  <section class="main">
+    <div class="content">
+      <div class="hello">
+        <div>
+          <div class="sub">Hi Daan · Noorderkade BV · Week 38</div>
+          <h1>Welcome back.</h1>
+        </div>
+        <div class="seg">
+          <button>Today</button>
+          <button class="on">Week</button>
+          <button>Range</button>
+        </div>
+      </div>
+      <article class="card balance">
+        <div>
+          <div class="bal-label">Collected</div>
+          <div class="tabs"><span class="on">Inflow</span><span>Outflow</span></div>
+          <div class="display">€128.640 <span class="pill up">+18%</span></div>
+        </div>
+        <div class="chart">
+          <div class="tip">Thu 17 Sep · €4.280</div>
+          <svg viewBox="0 0 640 200" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="fill" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#8B7CFF" stop-opacity="0.38"/>
+                <stop offset="1" stop-color="#8B7CFF" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g stroke="#243044" stroke-width="1" opacity="0.9">
+              <line x1="36" y1="28" x2="640" y2="28"/>
+              <line x1="36" y1="70" x2="640" y2="70"/>
+              <line x1="36" y1="112" x2="640" y2="112"/>
+              <line x1="36" y1="154" x2="640" y2="154"/>
+            </g>
+            <path d="M36,148 C90,142 130,128 170,122 C220,114 250,128 290,118 C330,108 360,72 400,68 C450,62 500,86 540,92 C580,98 610,84 640,78 L640,180 L36,180 Z" fill="url(#fill)"/>
+            <path d="M36,148 C90,142 130,128 170,122 C220,114 250,128 290,118 C330,108 360,72 400,68 C450,62 500,86 540,92 C580,98 610,84 640,78" fill="none" stroke="#8B7CFF" stroke-width="2.6"/>
+            <circle cx="400" cy="68" r="7" fill="#8B7CFF" opacity="0.25"/>
+            <circle cx="400" cy="68" r="4.2" fill="#E8EEF8"/>
+          </svg>
+          <div class="chart-axis">
+            <span>Mon 12</span><span>Tue 13</span><span>Wed 14</span><span>Thu 17</span><span>Fri 18</span><span>Sat 19</span><span>Sun 20</span>
+          </div>
+        </div>
+      </article>
+      <div class="kpis">
+        <div class="kpi"><div class="ico ico-cyan"><svg viewBox="0 0 24 24"><path d="M4 10h16v9H4z"/><path d="M4 10l8-6 8 6"/><path d="M10 19v-5h4v5"/></svg></div><div class="kpi-body"><div class="k">Retail floor</div><div class="v">€42.180</div><div class="d" style="color:var(--emerald)">↑ 12.4% vs last week</div></div></div>
+        <div class="kpi"><div class="ico ico-violet"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></div><div class="kpi-body"><div class="k">Marketplace</div><div class="v">€61.240</div><div class="d" style="color:var(--emerald)">↑ 8.7% vs last week</div></div></div>
+        <div class="kpi"><div class="ico ico-amber"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7z"/></svg></div><div class="kpi-body"><div class="k">Wholesale</div><div class="v">€16.420</div><div class="d" style="color:var(--danger)">↓ 3.1% vs last week</div></div></div>
+        <div class="kpi"><div class="ico ico-emerald"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.5-5.8"/><path d="M20 12a8 8 0 0 1-13.5 5.8"/></svg></div><div class="kpi-body"><div class="k">Subscriptions</div><div class="v">€8.800</div><div class="d" style="color:var(--emerald)">↑ 15.3% vs last week</div></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+<script src="northline.js"></script>
+</body>
+</html>
